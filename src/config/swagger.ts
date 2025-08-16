@@ -1,0 +1,45 @@
+export const swaggerConfig = {
+  openapi: {
+    openapi: '3.0.0' as const,
+    info: {
+      title: 'ERP Supermarket API',
+      description: 'API para gerenciamento de supermercados',
+      version: '1.0.0',
+      contact: {
+        name: 'ERP Supermarket',
+        email: 'contato@erpsupermarket.com'
+      }
+    },
+    servers: [
+      {
+        url: 'http://localhost:3000',
+        description: 'Development server'
+      }
+    ],
+    tags: [
+      { name: 'Health', description: 'Endpoints de verificação de saúde' },
+      { name: 'Auth', description: 'Endpoints de autenticação' },
+      { name: 'Users', description: 'Gerenciamento de usuários' }
+    ],
+    components: {
+      securitySchemes: {
+        Bearer: {
+          type: 'http' as const,
+          scheme: 'bearer' as const,
+          bearerFormat: 'JWT',
+          description: 'Token JWT no formato: Bearer <token>'
+        }
+      }
+    }
+  }
+}
+
+export const swaggerUiConfig = {
+  routePrefix: '/docs',
+  uiConfig: {
+    docExpansion: 'list' as const,
+    deepLinking: true
+  },
+  staticCSP: true,
+  transformStaticCSP: (header: string) => header
+}

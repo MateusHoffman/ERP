@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": [
+      "ES2020"
+    ],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@prisma/*": [
+        "prisma/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@controller/*": [
+        "src/controller/*"
+      ],
+      "@middlewares/*": [
+        "src/middlewares/*"
+      ],
+      "@repository/*": [
+        "src/repository/*"
+      ],
+      "@routes/*": [
+        "src/routes/*"
+      ],
+      "@service/*": [
+        "src/service/*"
+      ],
+      "@swagger/*": [
+        "src/swagger/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@validator/*": [
+        "src/validator/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

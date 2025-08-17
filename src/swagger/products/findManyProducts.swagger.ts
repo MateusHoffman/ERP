@@ -2,6 +2,7 @@ export const findManyProductsSwagger = {
   tags: ['Products'],
   summary: 'Buscar produtos',
   description: 'Lista todos os produtos com paginação, busca e filtros',
+  security: [{ bearerAuth: [] }],
   querystring: {
     type: 'object',
     properties: {
@@ -151,6 +152,30 @@ export const findManyProductsSwagger = {
       examples: [
         {
           error: 'Bad Request'
+        }
+      ]
+    },
+    401: {
+      description: 'Token não fornecido ou inválido',
+      type: 'object',
+      properties: {
+        error: { type: 'string' }
+      },
+      examples: [
+        {
+          error: 'Token de autorização não fornecido'
+        }
+      ]
+    },
+    403: {
+      description: 'Acesso negado',
+      type: 'object',
+      properties: {
+        error: { type: 'string' }
+      },
+      examples: [
+        {
+          error: 'Acesso negado'
         }
       ]
     }

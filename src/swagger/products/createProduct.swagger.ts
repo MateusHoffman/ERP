@@ -2,7 +2,7 @@ export const createProductSwagger = {
   tags: ['Products'],
   summary: 'Criar novo produto',
   description: 'Cria um novo produto no sistema com estoque inicial',
-  security: [{ Bearer: [] }],
+  security: [{ bearerAuth: [] }],
   body: {
     type: 'object',
     required: ['name', 'price', 'categoryId'],

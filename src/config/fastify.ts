@@ -19,7 +19,9 @@ export const createFastifyInstance = () => {
     origin: true
   });
 
+  // Registrar Swagger com configurações específicas
   fastify.register(swagger, swaggerConfig);
+  
   fastify.register(swaggerUi, swaggerUiConfig);
 
   fastify.addHook('preHandler', preHandlerLoggingMiddleware);

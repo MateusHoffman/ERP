@@ -2,7 +2,7 @@ export const updateStockSwagger = {
   tags: ['Stock'],
   summary: 'Atualizar estoque',
   description: 'Atualiza a quantidade e estoque mínimo de um produto',
-  security: [{ Bearer: [] }],
+  security: [{ bearerAuth: [] }],
   params: {
     type: 'object',
     properties: {

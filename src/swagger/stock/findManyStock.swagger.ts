@@ -2,7 +2,7 @@ export const findManyStockSwagger = {
   tags: ['Stock'],
   summary: 'Buscar estoque',
   description: 'Lista o estoque de produtos com paginação e filtros',
-  security: [{ Bearer: [] }],
+  security: [{ bearerAuth: [] }],
   querystring: {
     type: 'object',
     properties: {

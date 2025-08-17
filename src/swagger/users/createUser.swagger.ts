@@ -2,7 +2,7 @@ export const createUserSwagger = {
   tags: ['Users'],
   summary: 'Criar novo usuário',
   description: 'Cria um novo usuário no sistema (apenas SUPERADMIN)',
-  security: [{ Bearer: [] }],
+  security: [{ bearerAuth: [] }],
   body: {
     type: 'object',
     required: ['name', 'email', 'password'],

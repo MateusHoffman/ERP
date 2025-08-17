@@ -2,7 +2,7 @@ export const createCategorySwagger = {
   tags: ['Categories'],
   summary: 'Criar nova categoria',
   description: 'Cria uma nova categoria de produtos no sistema',
-  security: [{ Bearer: [] }],
+  security: [{ bearerAuth: [] }],
   body: {
     type: 'object',
     required: ['name'],

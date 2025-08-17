@@ -2,7 +2,7 @@ export const findManySalesSwagger = {
   tags: ['Sales'],
   summary: 'Buscar vendas',
   description: 'Lista todas as vendas com paginação e filtros por data e valor',
-  security: [{ Bearer: [] }],
+  security: [{ bearerAuth: [] }],
   querystring: {
     type: 'object',
     properties: {

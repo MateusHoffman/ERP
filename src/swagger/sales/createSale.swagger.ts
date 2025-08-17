@@ -2,7 +2,7 @@ export const createSaleSwagger = {
   tags: ['Sales'],
   summary: 'Criar nova venda',
   description: 'Cria uma nova venda e atualiza o estoque automaticamente',
-  security: [{ Bearer: [] }],
+  security: [{ bearerAuth: [] }],
   body: {
     type: 'object',
     required: ['items'],

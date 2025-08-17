@@ -4,6 +4,8 @@ import { logger } from '@utils/logger';
 export const startServer = async (fastify: FastifyInstance) => {
   try {
     await fastify.ready();
+    
+    // Gerar a especificação Swagger após o registro das rotas
     fastify.swagger();
     
     await fastify.listen({ port: 3000, host: '0.0.0.0' });

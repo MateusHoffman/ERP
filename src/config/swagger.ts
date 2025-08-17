@@ -27,11 +27,10 @@ export const swaggerConfig = {
     ],
     components: {
       securitySchemes: {
-        Bearer: {
+        bearerAuth: {
           type: 'http' as const,
           scheme: 'bearer' as const,
-          bearerFormat: 'JWT',
-          description: 'Token JWT no formato: Bearer <token>'
+          bearerFormat: 'JWT'
         }
       }
     }
@@ -42,8 +41,12 @@ export const swaggerUiConfig = {
   routePrefix: '/docs',
   uiConfig: {
     docExpansion: 'list' as const,
-    deepLinking: true
+    deepLinking: true,
+    tryItOutEnabled: true,
+    persistAuthorization: true,
+    displayRequestDuration: true,
+    filter: true
   },
-  staticCSP: true,
+  staticCSP: false,
   transformStaticCSP: (header: string) => header
 }

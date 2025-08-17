@@ -2,6 +2,7 @@ export const findManyCategoriesSwagger = {
   tags: ['Categories'],
   summary: 'Buscar categorias',
   description: 'Lista todas as categorias com paginação e busca',
+  security: [{ bearerAuth: [] }],
   querystring: {
     type: 'object',
     properties: {
@@ -95,6 +96,30 @@ export const findManyCategoriesSwagger = {
       examples: [
         {
           error: 'Bad Request'
+        }
+      ]
+    },
+    401: {
+      description: 'Token não fornecido ou inválido',
+      type: 'object',
+      properties: {
+        error: { type: 'string' }
+      },
+      examples: [
+        {
+          error: 'Token de autorização não fornecido'
+        }
+      ]
+    },
+    403: {
+      description: 'Acesso negado',
+      type: 'object',
+      properties: {
+        error: { type: 'string' }
+      },
+      examples: [
+        {
+          error: 'Acesso negado'
         }
       ]
     }

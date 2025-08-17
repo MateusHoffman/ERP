@@ -14,7 +14,7 @@ export const authorize = (allowedRoles: string[]) => {
       const token = authHeader.substring(7);
       const decoded = jwt.verify(token, process.env.JWT_SECRET || 'supersecretkey123456789') as { id: string; role: string; [key: string]: unknown };
       
-      if (!allowedRoles.map(role => role.toUpperCase()).includes(decoded.role)) {
+      if (!allowedRoles.map(role => role.toUpperCase()).includes(decoded.role.toUpperCase())) {
         return reply.status(403).send({ error: 'Acesso negado' });
       }
 

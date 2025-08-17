@@ -31,21 +31,22 @@ export const createUserSwagger = {
     },
     examples: [
       {
-        name: 'Superadmin',
-        email: 'superadmin@erp.com',
-        password: 'superadmin',
-        role: 'SUPERADMIN'
-      },
-      {
-        name: 'Admin',
+        name: 'Administrador Geral',
         email: 'admin@erp.com',
-        password: 'admin',
+        password: 'admin123',
         role: 'ADMIN'
       },
       {
-        name: 'Cashier',
+        name: 'Gerente de Loja',
+        email: 'manager@erp.com',
+        password: 'manager123',
+        role: 'MANAGER'
+      },
+      {
+        name: 'Caixa',
         email: 'cashier@erp.com',
-        password: 'cashier'
+        password: 'cashier123',
+        role: 'CASHIER'
       }
     ]
   },
@@ -62,32 +63,25 @@ export const createUserSwagger = {
       },
       examples: [
         {
-          id: '1234567890',
-          name: 'Super Administrador',
-          email: 'superadmin@erp.com',
-          role: 'SUPERADMIN',
-          createdAt: '2024-01-15T10:30:00Z'
-        },
-        {
-          id: '9876543210',
-          name: 'Administrador',
+          id: 'cmeg1urp800006e0vk8nn9mcl',
+          name: 'Administrador Geral',
           email: 'admin@erp.com',
           role: 'ADMIN',
-          createdAt: '2024-01-10T08:00:00Z'
+          createdAt: '2025-08-17T18:58:56.828Z'
         },
         {
-          id: '5556667778',
-          name: 'Gerente',
+          id: 'cmeg1uu1900016e0vycruwah1',
+          name: 'Gerente de Loja',
           email: 'manager@erp.com',
           role: 'MANAGER',
-          createdAt: '2024-01-20T14:15:00Z'
+          createdAt: '2025-08-17T18:58:59.854Z'
         },
         {
-          id: '1112223334',
-          name: 'João Caixa',
-          email: 'joao.caixa@erp.com',
+          id: 'cmeg1uwh700026e0vvgjnpm60',
+          name: 'Caixa',
+          email: 'cashier@erp.com',
           role: 'CASHIER',
-          createdAt: '2024-01-25T09:45:00Z'
+          createdAt: '2025-08-17T18:59:03.019Z'
         }
       ]
     },
@@ -120,7 +114,7 @@ export const createUserSwagger = {
       },
       examples: [
         {
-          error: 'Token de autenticação não fornecido.'
+          error: 'Token de autorização não fornecido'
         },
         {
           error: 'Token de autenticação inválido ou expirado.'

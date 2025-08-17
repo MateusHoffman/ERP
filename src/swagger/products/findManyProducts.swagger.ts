@@ -34,7 +34,32 @@ export const findManyProductsSwagger = {
         type: 'number',
         description: 'Preço máximo para filtrar (opcional)'
       }
-    }
+    },
+    examples: [
+      {
+        page: 1,
+        limit: 10
+      },
+      {
+        page: 1,
+        limit: 2
+      },
+      {
+        page: 2,
+        limit: 2
+      },
+      {
+        page: 1,
+        limit: 10,
+        categoryId: 'cmeg1uynk00036e0vtpvjlrfv'
+      },
+      {
+        page: 1,
+        limit: 10,
+        minPrice: 5,
+        maxPrice: 15
+      }
+    ]
   },
   response: {
     200: {
@@ -73,14 +98,61 @@ export const findManyProductsSwagger = {
         page: { type: 'number' },
         limit: { type: 'number' },
         totalPages: { type: 'number' }
-      }
+      },
+      examples: [
+        {
+          products: [
+            {
+              id: 'cmeg1v7kj00076e0vez8fb6vl',
+              name: 'Arroz Integral',
+              description: 'Arroz integral tipo 1, pacote 5kg',
+              price: 12.99,
+              barcode: '',
+              category: {
+                id: 'cmeg1uynk00036e0vtpvjlrfv',
+                name: 'Alimentos Básicos'
+              },
+              stock: {
+                quantity: 10,
+                minStock: 5
+              },
+              createdAt: '2025-08-17T18:59:17.396Z'
+            },
+            {
+              id: 'cmeg1vcj3000f6e0v6v9c518f',
+              name: 'Coca-Cola',
+              description: 'Refrigerante Coca-Cola 2L',
+              price: 6.99,
+              barcode: '',
+              category: {
+                id: 'cmeg1v0xc00046e0v49nv4lpm',
+                name: 'Bebidas'
+              },
+              stock: {
+                quantity: 10,
+                minStock: 20
+              },
+              createdAt: '2025-08-17T18:59:23.824Z'
+            }
+          ],
+          total: 4,
+          page: 1,
+          limit: 2,
+          totalPages: 2
+        }
+      ]
     },
     400: {
       description: 'Erro de validação',
       type: 'object',
       properties: {
         error: { type: 'string' }
-      }
+      },
+      examples: [
+        {
+          error: 'Bad Request'
+        }
+      ]
     }
   }
 };

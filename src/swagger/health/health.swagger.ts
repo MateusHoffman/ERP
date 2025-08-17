@@ -22,7 +22,15 @@ export const healthSwagger = {
           type: 'string',
           description: 'Ambiente de execução'
         }
-      }
+      },
+      examples: [
+        {
+          status: 'OK',
+          timestamp: '2025-08-17T19:04:12.938Z',
+          uptime: 8.172262786,
+          environment: 'development'
+        }
+      ]
     },
     500: {
       description: 'Erro interno do servidor',
@@ -31,7 +39,12 @@ export const healthSwagger = {
         error: {
           type: 'string'
         }
-      }
+      },
+      examples: [
+        {
+          error: 'Internal Server Error'
+        }
+      ]
     }
   }
 };

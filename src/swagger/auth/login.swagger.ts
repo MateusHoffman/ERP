@@ -24,11 +24,15 @@ export const loginSwagger = {
       },
       {
         email: 'admin@erp.com',
-        password: 'admin'
+        password: 'admin123'
+      },
+      {
+        email: 'manager@erp.com',
+        password: 'manager123'
       },
       {
         email: 'cashier@erp.com',
-        password: 'cashier'
+        password: 'cashier123'
       }
     ]
   },
@@ -53,36 +57,46 @@ export const loginSwagger = {
         }
       },
       examples: [
-         {
-            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMzQ1Njc4OTAiLCJlbWFpbCI6InN1cGVyYWRtaW5AZXJwLmNvbSIsInJvbGUiOiJTVVBFUkFETUlOIiwiaWF0IjoxNjM0NTY3ODkwLCJleHAiOjE2MzQ2NTQyOTB9LmV4ZW1wbG8tdG9rZW4',
-            user: {
-              id: '1234567890',
-              name: 'Superadmin',
-              email: 'superadmin@erp.com',
-              role: 'SUPERADMIN',
-              createdAt: '2024-01-15T10:30:00Z'
-            }
-          },
         {
-            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMzQ1Njc4OTAiLCJlbWFpbCI6ImFkbWluQGVycC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MzQ1Njc4OTAsImV4cCI6MTYzNDY1NDI5MH0uZXhlbXBsby10b2tlbg',
-            user: {
-              id: '9876543210',
-              name: 'Admin',
-              email: 'admin@erp.com',
-              role: 'ADMIN',
-              createdAt: '2024-01-10T08:00:00Z'
-            }
-          },
-        {
-            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMzQ1Njc4OTAiLCJlbWFpbCI6ImNhc2hpZXJAZXJwLmNvbSIsInJvbGUiOiJDQVNISUVSIiwiaWF0IjoxNjM0NTY3ODkwLCJleHAiOjE2MzQ2NTQyOTB9LmV4ZW1wbG8tdG9rZW4',
-            user: {
-              id: '5556667778',
-              name: 'Cashier',
-              email: 'cashier@erp.com',
-              role: 'CASHIER',
-              createdAt: '2024-01-20T14:15:00Z'
-            }
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWZ5M3d5ZTAwMDAxeXlxMXlpcWR3OXMiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlhdCI6MTc1NTQ1NzEyNywiZXhwIjoxNzU1NTQzNTI3fQ.SJ2RfQCLyzzrnh-kgfOV3vR5HaMYYaf6G4T97mN4gIw',
+          user: {
+            id: 'cmefy3wye00001yyq1yiqdw9s',
+            name: 'Super Administrador',
+            email: 'superadmin@erp.com',
+            role: 'SUPERADMIN',
+            createdAt: '2025-08-17T17:14:05.079Z'
           }
+        },
+        {
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWcxdXJwODAwMDA2ZTB2azhubjltY2wiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTU0NTcyMDksImV4cCI6MTc1NTU0MzYwOX0.0DdEChvqAvZxIJV-n5qJCOMqWZ16vU0p-kB85jXNp7w',
+          user: {
+            id: 'cmeg1urp800006e0vk8nn9mcl',
+            name: 'Administrador Geral',
+            email: 'admin@erp.com',
+            role: 'ADMIN',
+            createdAt: '2025-08-17T18:58:56.828Z'
+          }
+        },
+        {
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWcxdXUxOTAwMDE2ZTB2eWNydXdhaDEiLCJyb2xlIjoiTUFOQUdFUiIsImlhdCI6MTc1NTQ1NzIxNSwiZXhwIjoxNzU1NTQzNjE1fQ.HN_PbuNDh43cAj-mzEfLyYI6zX8Mko6w4muzIvJeY64',
+          user: {
+            id: 'cmeg1uu1900016e0vycruwah1',
+            name: 'Gerente de Loja',
+            email: 'manager@erp.com',
+            role: 'MANAGER',
+            createdAt: '2025-08-17T18:58:59.854Z'
+          }
+        },
+        {
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWcxdXdoNzAwMDI2ZTB2dmdqbnBtNjAiLCJyb2xlIjoiQ0FTSElFUiIsImlhdCI6MTc1NTQ1NzIyMiwiZXhwIjoxNzU1NTQzNjIyfQ.Xy8wVv-GYAAvKRaPe1PYymPm7zSAYQbAmjq12z0SMkY',
+          user: {
+            id: 'cmeg1uwh700026e0vvgjnpm60',
+            name: 'Caixa',
+            email: 'cashier@erp.com',
+            role: 'CASHIER',
+            createdAt: '2025-08-17T18:59:03.019Z'
+          }
+        }
       ]
     },
     400: {
@@ -93,52 +107,22 @@ export const loginSwagger = {
       },
       examples: [
         {
-          name: 'exemplo-erro-1',
-          summary: 'Credenciais inválidas',
-          description: 'Email ou senha incorretos para o sistema ERP',
-          value: {
-            error: 'Credenciais inválidas. Verifique seu email e senha.'
-          }
+          error: 'Credenciais inválidas. Verifique seu email e senha.'
         },
         {
-          name: 'exemplo-erro-2',
-          summary: 'Usuário não encontrado',
-          description: 'Email não cadastrado no sistema ERP',
-          value: {
-            error: 'Usuário não encontrado no sistema.'
-          }
+          error: 'Usuário não encontrado'
         },
         {
-          name: 'exemplo-erro-3',
-          summary: 'Conta desativada',
-          description: 'Usuário existe mas está desativado no sistema',
-          value: {
-            error: 'Conta de usuário desativada. Entre em contato com o administrador.'
-          }
+          error: 'Conta de usuário desativada. Entre em contato com o administrador.'
         },
         {
-          name: 'exemplo-erro-4',
-          summary: 'Campos obrigatórios',
-          description: 'Email ou senha não fornecidos na requisição',
-          value: {
-            error: 'Email e senha são obrigatórios para autenticação.'
-          }
+          error: 'Email e senha são obrigatórios para autenticação.'
         },
         {
-          name: 'exemplo-erro-5',
-          summary: 'Formato de email inválido',
-          description: 'Email com formato incorreto',
-          value: {
-            error: 'Formato de email inválido. Use um email válido.'
-          }
+          error: 'Formato de email inválido. Use um email válido.'
         },
         {
-          name: 'exemplo-erro-6',
-          summary: 'Senha muito curta',
-          description: 'Senha com menos de 6 caracteres',
-          value: {
-            error: 'A senha deve ter pelo menos 6 caracteres.'
-          }
+          error: 'A senha deve ter pelo menos 6 caracteres.'
         }
       ]
     }

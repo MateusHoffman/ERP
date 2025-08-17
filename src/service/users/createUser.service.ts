@@ -1,5 +1,5 @@
 import { createUserRepository } from '../../repository/users/createUser.repository';
-import bcrypt from 'bcryptjs';
+import argon2 from 'argon2';
 
 interface CreateUserData {
   name: string;
@@ -9,7 +9,7 @@ interface CreateUserData {
 }
 
 export const createUserService = async (userData: CreateUserData) => {
-  const hashedPassword = await bcrypt.hash(userData.password, 10);
+  const hashedPassword = await argon2.hash(userData.password);
   
   const user = await createUserRepository({
     ...userData,

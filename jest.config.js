@@ -3,7 +3,7 @@ module.exports = {
   testEnvironment: 'node',
   roots: ['<rootDir>/src'],
   testMatch: ['**/__tests__/**/*.test.ts'],
-  moduleNameMapping: {
+  moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@config/(.*)$': '<rootDir>/src/config/$1',
     '^@controller/(.*)$': '<rootDir>/src/controller/$1',
@@ -22,5 +22,24 @@ module.exports = {
     '!src/**/*.d.ts',
     '!src/server.ts',
     '!src/__tests__/**'
-  ]
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov', 'html'],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80
+    }
+  },
+  transform: {
+    '^.+\\.ts$': ['ts-jest', {
+      tsconfig: {
+        skipLibCheck: true,
+        noImplicitAny: false,
+        strict: false
+      }
+    }]
+  }
 };

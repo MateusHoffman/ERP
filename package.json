@@ -7,9 +7,9 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "open coverage/index.html",
     "prisma:studio": "npx prisma studio --port 5555",
     "prisma:sync": "npx prisma db pull && npx prisma generate",
     "prisma:migrate": "npm run prisma:sync && npx prisma migrate dev --name",
@@ -29,7 +29,7 @@
     "@fastify/swagger": "^8.12.1",
     "@fastify/swagger-ui": "^2.1.0",
     "@prisma/client": "^5.7.1",
-    "bcryptjs": "^2.4.3",
+    "argon2": "^0.44.0",
     "fastify": "^4.25.2",
     "jsonwebtoken": "^9.0.2",
     "pino": "^8.17.2",
@@ -37,7 +37,6 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^3.0.0",
     "@types/jest": "^30.0.0",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20.10.6",

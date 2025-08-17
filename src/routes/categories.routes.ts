@@ -13,6 +13,7 @@ export const categoriesRoutes = async (fastify: FastifyInstance) => {
 
   fastify.get('/categories', {
     schema: findManyCategoriesSwagger,
+    preHandler: authorize(['SUPERADMIN', 'ADMIN', 'MANAGER']),
     handler: findManyCategoriesController
   });
 };

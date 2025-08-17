@@ -13,6 +13,7 @@ export const productsRoutes = async (fastify: FastifyInstance) => {
 
   fastify.get('/products', {
     schema: findManyProductsSwagger,
+    preHandler: authorize(['SUPERADMIN', 'ADMIN', 'MANAGER']),
     handler: findManyProductsController
   });
 };

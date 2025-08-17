@@ -6,7 +6,7 @@ import { createUserSwagger } from '@swagger/users';
 export const usersRoutes = async (fastify: FastifyInstance) => {
   fastify.post('/users', {
     schema: createUserSwagger,
-    preHandler: authorize(['superadmin']),
+    preHandler: authorize(['SUPERADMIN']),
     handler: createUserController
   });
 };

@@ -19,7 +19,11 @@ export const swaggerConfig = {
     tags: [
       { name: 'Health', description: 'Endpoints de verificação de saúde' },
       { name: 'Auth', description: 'Endpoints de autenticação' },
-      { name: 'Users', description: 'Gerenciamento de usuários' }
+      { name: 'Users', description: 'Gerenciamento de usuários' },
+      { name: 'Categories', description: 'Gerenciamento de categorias de produtos' },
+      { name: 'Products', description: 'Gerenciamento de produtos' },
+      { name: 'Stock', description: 'Controle de estoque' },
+      { name: 'Sales', description: 'Gerenciamento de vendas' }
     ],
     components: {
       securitySchemes: {

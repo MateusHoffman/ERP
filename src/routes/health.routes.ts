@@ -2,7 +2,6 @@ import { FastifyInstance } from 'fastify';
 import { healthSwagger } from '@swagger/health';
 
 export const healthRoutes = async (fastify: FastifyInstance) => {
-  // Adiciona a documentação Swagger para o health check
   fastify.get('/health', {
     schema: healthSwagger,
     handler: async () => {

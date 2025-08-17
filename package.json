@@ -13,6 +13,8 @@
     "prisma:studio": "npx prisma studio --port 5555",
     "prisma:sync": "npx prisma db pull && npx prisma generate",
     "prisma:migrate": "npm run prisma:sync && npx prisma migrate dev --name",
+    "db:clear": "npx ts-node scripts/clearDatabase.ts",
+    "db:seed": "npx ts-node scripts/seedDatabase.ts",
     "swagger": "open http://localhost:3000/docs"
   },
   "keywords": [

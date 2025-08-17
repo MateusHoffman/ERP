@@ -1,4 +1,4 @@
-import { createProductRepository } from '../../repository/products/createProduct.repository';
+import { createProductRepository } from '@repository/products/createProduct.repository';
 
 interface CreateProductData {
   name: string;

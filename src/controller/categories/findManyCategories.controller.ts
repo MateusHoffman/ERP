@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { findManyCategoriesValidator } from '../../validator/categories/findManyCategories.validator';
-import { findManyCategoriesService } from '../../service/categories/findManyCategories.service';
+import { findManyCategoriesValidator } from '@validator/categories/findManyCategories.validator';
+import { findManyCategoriesService } from '@service/categories/findManyCategories.service';
 
 export const findManyCategoriesController = async (request: FastifyRequest, reply: FastifyReply) => {
   try {

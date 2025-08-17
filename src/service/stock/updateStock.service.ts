@@ -1,4 +1,4 @@
-import { updateStockRepository } from '../../repository/stock/updateStock.repository';
+import { updateStockRepository } from '@repository/stock/updateStock.repository';
 
 interface UpdateStockData {
   productId: string;

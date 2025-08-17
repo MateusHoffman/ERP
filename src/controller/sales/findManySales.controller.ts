@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { findManySalesValidator } from '../../validator/sales/findManySales.validator';
-import { findManySalesService } from '../../service/sales/findManySales.service';
+import { findManySalesValidator } from '@validator/sales/findManySales.validator';
+import { findManySalesService } from '@service/sales/findManySales.service';
 
 export const findManySalesController = async (request: FastifyRequest, reply: FastifyReply) => {
   try {

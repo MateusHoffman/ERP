@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
-import { logger } from '../utils/logger';
+import { logger } from '@utils/logger';
 
 export const authorize = (allowedRoles: string[]) => {
   return async (request: FastifyRequest, reply: FastifyReply) => {

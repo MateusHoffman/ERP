@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { createProductValidator } from '../../validator/products/createProduct.validator';
-import { createProductService } from '../../service/products/createProduct.service';
+import { createProductValidator } from '@validator/products/createProduct.validator';
+import { createProductService } from '@service/products/createProduct.service';
 
 export const createProductController = async (request: FastifyRequest, reply: FastifyReply) => {
   try {

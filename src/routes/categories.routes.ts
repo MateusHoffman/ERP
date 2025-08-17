@@ -1,7 +1,7 @@
 import { FastifyInstance } from 'fastify';
-import { createCategoryController } from '../controller/categories/createCategory.controller';
-import { findManyCategoriesController } from '../controller/categories/findManyCategories.controller';
-import { authorize } from '../middlewares/authorize.middleware';
+import { createCategoryController } from '@controller/categories/createCategory.controller';
+import { findManyCategoriesController } from '@controller/categories/findManyCategories.controller';
+import { authorize } from '@middlewares/authorize.middleware';
 import { createCategorySwagger, findManyCategoriesSwagger } from '@swagger/categories';
 
 export const categoriesRoutes = async (fastify: FastifyInstance) => {

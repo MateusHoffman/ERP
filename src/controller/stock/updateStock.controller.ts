@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { updateStockValidator } from '../../validator/stock/updateStock.validator';
-import { updateStockService } from '../../service/stock/updateStock.service';
+import { updateStockValidator } from '@validator/stock/updateStock.validator';
+import { updateStockService } from '@service/stock/updateStock.service';
 
 export const updateStockController = async (request: FastifyRequest, reply: FastifyReply) => {
   try {

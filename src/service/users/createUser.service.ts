@@ -1,4 +1,4 @@
-import { createUserRepository } from '../../repository/users/createUser.repository';
+import { createUserRepository } from '@repository/users/createUser.repository';
 import argon2 from 'argon2';
 
 interface CreateUserData {

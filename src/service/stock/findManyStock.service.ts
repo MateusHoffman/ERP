@@ -1,4 +1,4 @@
-import { findManyStockRepository } from '../../repository/stock/findManyStock.repository';
+import { findManyStockRepository } from '@repository/stock/findManyStock.repository';
 
 interface FindManyStockParams {
   page: number;

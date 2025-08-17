@@ -1,4 +1,4 @@
-import { findManyCategoriesRepository } from '../../repository/categories/findManyCategories.repository';
+import { findManyCategoriesRepository } from '@repository/categories/findManyCategories.repository';
 
 interface FindManyCategoriesParams {
   page: number;

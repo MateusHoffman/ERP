@@ -1,7 +1,7 @@
 import argon2 from 'argon2';
 import jwt from 'jsonwebtoken';
-import { findUserByEmail } from '../../repository/auth/login.repository';
-import { jwtConfig } from '../../config/jwt';
+import { findUserByEmail } from '@repository/auth/login.repository';
+import { jwtConfig } from '@config/jwt';
 
 export const loginService = async (email: string, password: string) => {
   const user = await findUserByEmail(email);

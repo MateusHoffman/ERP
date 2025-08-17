@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { createCategoryValidator } from '../../validator/categories/createCategory.validator';
-import { createCategoryService } from '../../service/categories/createCategory.service';
+import { createCategoryValidator } from '@validator/categories/createCategory.validator';
+import { createCategoryService } from '@service/categories/createCategory.service';
 
 export const createCategoryController = async (request: FastifyRequest, reply: FastifyReply) => {
   try {

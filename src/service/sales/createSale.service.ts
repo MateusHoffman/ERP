@@ -1,4 +1,4 @@
-import { createSaleRepository } from '../../repository/sales/createSale.repository';
+import { createSaleRepository } from '@repository/sales/createSale.repository';
 
 interface CreateSaleData {
   userId: string;

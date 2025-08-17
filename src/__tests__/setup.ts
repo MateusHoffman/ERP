@@ -6,7 +6,7 @@ process.env.JWT_SECRET = 'test-secret-key';
 process.env.DATABASE_URL = 'file:./test.db';
 
 // Mock do logger
-jest.mock('../utils/logger', () => ({
+jest.mock('@utils/logger', () => ({
   logger: {
     info: jest.fn(),
     error: jest.fn(),

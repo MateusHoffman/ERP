@@ -1,4 +1,4 @@
-import { createCategoryRepository } from '../../repository/categories/createCategory.repository';
+import { createCategoryRepository } from '@repository/categories/createCategory.repository';
 
 interface CreateCategoryData {
   name: string;

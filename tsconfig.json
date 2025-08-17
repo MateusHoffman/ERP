@@ -56,6 +56,12 @@
       ],
       "@validator/*": [
         "src/validator/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@__tests__/*": [
+        "src/__tests__/*"
       ]
     }
   },

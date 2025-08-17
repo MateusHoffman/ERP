@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { loginValidator } from '../../validator/auth/login.validator';
-import { loginService } from '../../service/auth/login.service';
+import { loginValidator } from '@validator/auth/login.validator';
+import { loginService } from '@service/auth/login.service';
 
 export const loginController = async (request: FastifyRequest, reply: FastifyReply) => {
   try {

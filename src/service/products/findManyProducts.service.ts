@@ -1,4 +1,4 @@
-import { findManyProductsRepository } from '../../repository/products/findManyProducts.repository';
+import { findManyProductsRepository } from '@repository/products/findManyProducts.repository';
 
 interface FindManyProductsParams {
   page: number;

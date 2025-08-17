@@ -1,7 +1,7 @@
-import { createCategoryController } from '../../controller/categories/createCategory.controller';
-import { createCategorySwagger } from '../../swagger/categories/createCategory.swagger';
+import { createCategoryController } from '@controller/categories/createCategory.controller';
+import { createCategorySwagger } from '@swagger/categories/createCategory.swagger';
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { mockPrismaClient } from '../mocks/prisma.mock';
+import { mockPrismaClient } from '@__tests__/mocks/prisma.mock';
 
 describe('createCategoryController', () => {
   let mockReply: Partial<FastifyReply>;

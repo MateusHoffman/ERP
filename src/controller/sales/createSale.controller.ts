@@ -15,6 +15,25 @@ export const createSaleController = async (request: FastifyRequest, reply: Fasti
     return reply.status(201).send(result);
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'Erro desconhecido';
-    return reply.status(400).send({ error: errorMessage });
+    
+    // Retornar status HTTP apropriado baseado no tipo de erro
+    if (errorMessage.includes('Erro de estoque')) {
+      return reply.status(422).send({ 
+        error: errorMessage,
+        type: 'STOCK_ERROR'
+      });
+    }
+    
+    if (errorMessage.includes('Erro interno')) {
+      return reply.status(500).send({ 
+        error: errorMessage,
+        type: 'INTERNAL_ERROR'
+      });
+    }
+    
+    return reply.status(400).send({ 
+      error: errorMessage,
+      type: 'VALIDATION_ERROR'
+    });
   }
 };

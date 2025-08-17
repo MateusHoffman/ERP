@@ -15,6 +15,22 @@ export const createSaleRepository = async (saleData: CreateSaleData) => {
   const total = saleData.items.reduce((sum, item) => sum + (item.quantity * item.price), 0);
 
   return await prisma.$transaction(async (tx) => {
+    // Verificar se há estoque suficiente para todos os produtos
+    for (const item of saleData.items) {
+      const stock = await tx.stock.findUnique({
+        where: { productId: item.productId },
+        include: { product: true }
+      });
+
+      if (!stock) {
+        throw new Error(`Produto ${item.productId} não possui registro de estoque`);
+      }
+
+      if (stock.quantity < item.quantity) {
+        throw new Error(`Estoque insuficiente para o produto "${stock.product.name}". Disponível: ${stock.quantity}, Solicitado: ${item.quantity}`);
+      }
+    }
+
     // Criar a venda
     const sale = await tx.sale.create({
       data: {
@@ -37,7 +53,7 @@ export const createSaleRepository = async (saleData: CreateSaleData) => {
       )
     );
 
-    // Atualizar estoque
+    // Atualizar estoque (decrementar automaticamente)
     await Promise.all(
       saleData.items.map(item =>
         tx.stock.update({

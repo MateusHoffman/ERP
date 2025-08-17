@@ -14,7 +14,8 @@ module.exports = {
     '^@swagger/(.*)$': '<rootDir>/src/swagger/$1',
     '^@types/(.*)$': '<rootDir>/src/types/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
-    '^@validator/(.*)$': '<rootDir>/src/validator/$1'
+    '^@validator/(.*)$': '<rootDir>/src/validator/$1',
+    '^@__tests__/(.*)$': '<rootDir>/src/__tests__/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/src/__tests__/setup.ts'],
   collectCoverageFrom: [

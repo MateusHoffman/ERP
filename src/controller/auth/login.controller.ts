@@ -1,8 +1,11 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { loginValidator } from '@validator/auth/login.validator';
+import { loginValidator, LoginInput } from '@validator/auth/login.validator';
 import { loginService } from '@service/auth/login.service';
 
-export const loginController = async (request: FastifyRequest, reply: FastifyReply) => {
+export const loginController = async (
+  request: FastifyRequest<{ Body: LoginInput }>, 
+  reply: FastifyReply
+) => {
   try {
     const { email, password } = loginValidator.parse(request.body);
     const result = await loginService(email, password);

@@ -11,3 +11,6 @@ export const loginValidator = z.object({
     invalid_type_error: 'A senha deve ser uma string'
   }).min(6, { message: 'A senha deve ter pelo menos 6 caracteres' })
 });
+
+// Interface TypeScript gerada a partir do schema Zod
+export type LoginInput = z.infer<typeof loginValidator>;

@@ -1,14 +1,8 @@
 import { createUserRepository } from '@repository/users/createUser.repository';
+import { CreateUserInput } from '@validator/users/createUser.validator';
 import argon2 from 'argon2';
 
-interface CreateUserData {
-  name: string;
-  email: string;
-  password: string;
-  role: string;
-}
-
-export const createUserService = async (userData: CreateUserData) => {
+export const createUserService = async (userData: CreateUserInput) => {
   const hashedPassword = await argon2.hash(userData.password);
   
   const user = await createUserRepository({

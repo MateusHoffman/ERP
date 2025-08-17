@@ -20,30 +20,28 @@ model User {
 }
 
 model Category {
-  id          String   @id @default(cuid())
-  name        String   @unique
+  id          String    @id @default(cuid())
+  name        String    @unique
   description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  products Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  products    Product[]
 
   @@map("categories")
 }
 
 model Product {
-  id          String   @id @default(cuid())
+  id          String     @id @default(cuid())
   name        String
   description String?
   price       Float
-  barcode     String?  @unique
+  barcode     String?    @unique
   categoryId  String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  category Category @relation(fields: [categoryId], references: [id])
-  stock    Stock?
-  sales    SaleItem[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  category    Category   @relation(fields: [categoryId], references: [id])
+  sales       SaleItem[]
+  stock       Stock?
 
   @@map("products")
 }
@@ -55,8 +53,7 @@ model Stock {
   minStock  Int      @default(5)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  product Product @relation(fields: [productId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
 
   @@map("stock")
 }
@@ -66,21 +63,19 @@ model Sale {
   userId    String
   total     Float
   createdAt DateTime   @default(now())
-
-  items SaleItem[]
+  items     SaleItem[]
 
   @@map("sales")
 }
 
 model SaleItem {
-  id        String @id @default(cuid())
+  id        String  @id @default(cuid())
   saleId    String
   productId String
   quantity  Int
   price     Float
-
-  sale    Sale    @relation(fields: [saleId], references: [id])
-  product Product @relation(fields: [productId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+  sale      Sale    @relation(fields: [saleId], references: [id])
 
   @@map("sale_items")
 }

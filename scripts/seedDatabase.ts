@@ -1,5 +1,9 @@
 import { PrismaClient } from '@prisma/client';
 import argon2 from 'argon2';
+import dotenv from 'dotenv';
+
+// Carregar variáveis de ambiente
+dotenv.config();
 
 const prisma = new PrismaClient();
 

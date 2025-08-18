@@ -1,3 +1,5 @@
+import { env } from './env';
+
 export const swaggerConfig = {
   openapi: {
     openapi: '3.0.0' as const,
@@ -12,7 +14,7 @@ export const swaggerConfig = {
     },
     servers: [
       {
-        url: 'http://localhost:3000',
+        url: `http://${env.HOST}:${env.PORT}`,
         description: 'Development server'
       }
     ],

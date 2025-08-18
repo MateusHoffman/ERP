@@ -1,5 +1,6 @@
 import { FastifyInstance } from 'fastify';
 import { logger } from '@utils/logger';
+import { env } from './env';
 
 export const startServer = async (fastify: FastifyInstance) => {
   try {
@@ -8,9 +9,9 @@ export const startServer = async (fastify: FastifyInstance) => {
     // Gerar a especificação Swagger após o registro das rotas
     fastify.swagger();
     
-    await fastify.listen({ port: 3000, host: '0.0.0.0' });
-    logger.info('Servidor rodando na porta 3000');
-    logger.info('Documentação disponível em: http://localhost:3000/docs');
+    await fastify.listen({ port: env.PORT, host: env.HOST });
+    logger.info(`Servidor rodando na porta ${env.PORT}`);
+    logger.info(`Documentação disponível em: http://localhost:${env.PORT}/docs`);
   } catch (err) {
     logger.error(err);
     process.exit(1);

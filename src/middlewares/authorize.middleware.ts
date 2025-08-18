@@ -1,6 +1,7 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
 import { logger } from '@utils/logger';
+import { env } from '@config/env';
 
 export const authorize = (allowedRoles: string[]) => {
   return async (request: FastifyRequest, reply: FastifyReply) => {
@@ -12,7 +13,7 @@ export const authorize = (allowedRoles: string[]) => {
       }
 
       const token = authHeader.substring(7);
-      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'supersecretkey123456789') as { id: string; role: string; [key: string]: unknown };
+      const decoded = jwt.verify(token, env.JWT_SECRET) as { id: string; role: string; [key: string]: unknown };
       
       if (!allowedRoles.map(role => role.toUpperCase()).includes(decoded.role.toUpperCase())) {
         return reply.status(403).send({ error: 'Acesso negado' });

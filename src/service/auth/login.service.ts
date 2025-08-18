@@ -10,6 +10,10 @@ export const loginService = async (email: string, password: string) => {
   const valid = await argon2.verify(user.password, password);
   if (!valid) throw new Error('Senha incorreta');
 
-  const token = jwt.sign({ id: user.id, role: user.role }, jwtConfig.secret, { expiresIn: jwtConfig.expiresIn });
+  const token = jwt.sign(
+    { id: user.id, role: user.role },
+    jwtConfig.secret as jwt.Secret,
+    { expiresIn: jwtConfig.expiresIn as jwt.SignOptions['expiresIn'] }
+  );
   return { token, user };
 };

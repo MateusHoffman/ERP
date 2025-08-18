@@ -3,6 +3,7 @@ import cors from '@fastify/cors';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
 import { swaggerConfig, swaggerUiConfig } from './swagger';
+import { env } from './env';
 import { 
   onErrorLoggingMiddleware,
   onResponseLoggingMiddleware,
@@ -12,7 +13,17 @@ import {
 
 export const createFastifyInstance = () => {
   const fastify = Fastify({
-    logger: false
+    logger: {
+      level: env.LOG_LEVEL,
+      transport: {
+        target: 'pino-pretty',
+        options: {
+          colorize: true,
+          translateTime: 'HH:MM:ss Z',
+          ignore: 'pid,hostname'
+        }
+      }
+    }
   });
 
   fastify.register(cors, {

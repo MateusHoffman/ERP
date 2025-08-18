@@ -1,4 +1,6 @@
+import { env } from './env';
+
 export const jwtConfig = {
-  secret: process.env.JWT_SECRET || 'supersecretkey',
-  expiresIn: '1d' as const
+  secret: env.JWT_SECRET,
+  expiresIn: env.JWT_EXPIRES_IN!
 };

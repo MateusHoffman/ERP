@@ -2,11 +2,9 @@ import { FastifyRequest, FastifyReply } from 'fastify';
 import { logger } from '@utils/logger';
 import { env } from '@config/env';
 
-export const preHandlerLoggingMiddleware = async (
-  request: FastifyRequest,
-) => {
+export const preHandlerLoggingMiddleware = async (request: FastifyRequest) => {
   const startTime = Date.now();
-  
+
   if (env.NODE_ENV === 'production') {
     logger.info({
       type: 'preHandler',
@@ -45,20 +43,20 @@ export const onResponseLoggingMiddleware = async (
   try {
     const startTime = (request as any).startTime || Date.now();
     const responseTime = Date.now() - startTime;
-    
+
     if (env.NODE_ENV === 'production') {
       logger.info({
         type: 'onResponse',
         request,
         reply: {
           ...reply,
-          responseTimeMs: `${responseTime} ms`
-        }
+          responseTimeMs: `${responseTime} ms`,
+        },
       });
     } else {
       const responseData = (request as any).responsePayload;
       let parsedData = 'No data';
-      
+
       if (responseData) {
         try {
           parsedData = JSON.parse(responseData.toString());
@@ -66,7 +64,7 @@ export const onResponseLoggingMiddleware = async (
           parsedData = responseData.toString();
         }
       }
-      
+
       logger.info({
         type: 'onResponse',
         request: {
@@ -79,8 +77,8 @@ export const onResponseLoggingMiddleware = async (
         reply: {
           statusCode: reply.statusCode,
           responseTimeMs: `${responseTime} ms`,
-          data: parsedData
-        }
+          data: parsedData,
+        },
       });
     }
   } catch (error) {
@@ -108,9 +106,9 @@ export const onErrorLoggingMiddleware = async (
         method: request.method,
         error: {
           message: error.message,
-          stack: error.stack
+          stack: error.stack,
         },
-        statusCode: reply.statusCode
+        statusCode: reply.statusCode,
       });
     }
   } catch (loggingError) {

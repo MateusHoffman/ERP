@@ -8,12 +8,12 @@ export const salesRoutes = async (fastify: FastifyInstance) => {
   fastify.post('/sales', {
     schema: createSaleSwagger,
     preHandler: authorize(['SUPERADMIN', 'ADMIN', 'MANAGER', 'CASHIER']),
-    handler: createSaleController
+    handler: createSaleController,
   });
 
   fastify.get('/sales', {
     schema: findManySalesSwagger,
     preHandler: authorize(['SUPERADMIN', 'ADMIN', 'MANAGER']),
-    handler: findManySalesController
+    handler: findManySalesController,
   });
 };

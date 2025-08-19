@@ -1,0 +1,40 @@
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/src'],
+  testMatch: ['**/__tests__/**/*.ts', '**/?(*.)+(spec|test).ts'],
+  transform: {
+    '^.+\\.ts$': 'ts-jest',
+  },
+  collectCoverageFrom: [
+    'src/**/*.ts',
+    '!src/**/*.d.ts',
+    '!src/server.ts',
+    '!src/**/index.ts',
+    '!src/__tests__/**',
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov', 'html'],
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0,
+    },
+  },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@config/(.*)$': '<rootDir>/src/config/$1',
+    '^@controller/(.*)$': '<rootDir>/src/controller/$1',
+    '^@middlewares/(.*)$': '<rootDir>/src/middlewares/$1',
+    '^@repository/(.*)$': '<rootDir>/src/repository/$1',
+    '^@routes/(.*)$': '<rootDir>/src/routes/$1',
+    '^@service/(.*)$': '<rootDir>/src/service/$1',
+    '^@swagger/(.*)$': '<rootDir>/src/swagger/$1',
+    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^@validator/(.*)$': '<rootDir>/src/validator/$1',
+    '^@types/(.*)$': '<rootDir>/src/types/$1',
+  },
+  testTimeout: 10000,
+};

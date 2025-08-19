@@ -4,7 +4,7 @@ import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
 import { swaggerConfig, swaggerUiConfig } from './swagger';
 import { env } from './env';
-import { 
+import {
   onErrorLoggingMiddleware,
   onResponseLoggingMiddleware,
   onSendLoggingMiddleware,
@@ -20,19 +20,19 @@ export const createFastifyInstance = () => {
         options: {
           colorize: true,
           translateTime: 'HH:MM:ss Z',
-          ignore: 'pid,hostname'
-        }
-      }
-    }
+          ignore: 'pid,hostname',
+        },
+      },
+    },
   });
 
   fastify.register(cors, {
-    origin: true
+    origin: true,
   });
 
   // Registrar Swagger com configurações específicas
   fastify.register(swagger, swaggerConfig);
-  
+
   fastify.register(swaggerUi, swaggerUiConfig);
 
   fastify.addHook('preHandler', preHandlerLoggingMiddleware);

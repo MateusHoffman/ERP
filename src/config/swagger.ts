@@ -9,35 +9,38 @@ export const swaggerConfig = {
       version: '1.0.0',
       contact: {
         name: 'ERP Supermarket',
-        email: 'contato@erpsupermarket.com'
-      }
+        email: 'contato@erpsupermarket.com',
+      },
     },
     servers: [
       {
         url: `http://${env.HOST}:${env.PORT}`,
-        description: 'Development server'
-      }
+        description: 'Development server',
+      },
     ],
     tags: [
       { name: 'Health', description: 'Endpoints de verificação de saúde' },
       { name: 'Auth', description: 'Endpoints de autenticação' },
       { name: 'Users', description: 'Gerenciamento de usuários' },
-      { name: 'Categories', description: 'Gerenciamento de categorias de produtos' },
+      {
+        name: 'Categories',
+        description: 'Gerenciamento de categorias de produtos',
+      },
       { name: 'Products', description: 'Gerenciamento de produtos' },
       { name: 'Stock', description: 'Controle de estoque' },
-      { name: 'Sales', description: 'Gerenciamento de vendas' }
+      { name: 'Sales', description: 'Gerenciamento de vendas' },
     ],
     components: {
       securitySchemes: {
         bearerAuth: {
           type: 'http' as const,
           scheme: 'bearer' as const,
-          bearerFormat: 'JWT'
-        }
-      }
-    }
-  }
-}
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+  },
+};
 
 export const swaggerUiConfig = {
   routePrefix: '/docs',
@@ -47,8 +50,8 @@ export const swaggerUiConfig = {
     tryItOutEnabled: true,
     persistAuthorization: true,
     displayRequestDuration: true,
-    filter: true
+    filter: true,
   },
   staticCSP: false,
-  transformStaticCSP: (header: string) => header
-}
+  transformStaticCSP: (header: string) => header,
+};

@@ -5,6 +5,6 @@ import { loginSwagger } from '@swagger/auth';
 export const authRoutes = async (fastify: FastifyInstance) => {
   fastify.post('/auth/login', {
     schema: loginSwagger,
-    handler: loginController
+    handler: loginController,
   });
 };

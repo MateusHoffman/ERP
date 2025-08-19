@@ -10,8 +10,8 @@ export const healthRoutes = async (fastify: FastifyInstance) => {
         status: 'OK',
         timestamp: new Date().toISOString(),
         uptime: process.uptime(),
-        environment: env.NODE_ENV
+        environment: env.NODE_ENV,
       };
-    }
+    },
   });
 };
